@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "map-box",
+    "slug": "map-box",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "map-box"
+}
