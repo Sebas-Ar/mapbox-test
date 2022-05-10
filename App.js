@@ -1,21 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
+import MapboxGL from "@rnmapbox/maps"
+
+MapboxGL.setAccessToken("sk.eyJ1IjoiY3Jpc3RpYW52ZWdhIiwiYSI6ImNsMnV1cTYycjA1OWIzcG80YWs1OGM0MTYifQ.VEMvWOqoolXB9zbieBzusg");
+MapboxGL.setConnected(true);
 
 const styles = StyleSheet.create({
-  container: {
+  page: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF"
   },
+  container: {
+    height: 300,
+    width: 300,
+    backgroundColor: "tomato"
+  },
+  map: {
+    flex: 1
+  }
 });
+
+export default class App extends Component {
+  componentDidMount() {
+    MapboxGL.setTelemetryEnabled(false);
+  }
+
+  render() {
+    return (
+      <View style={styles.page}>
+        <View style={styles.container}>
+          <MapboxGL.MapView style={styles.map} />
+        </View>
+      </View>
+    );
+  }
+}

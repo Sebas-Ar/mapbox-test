@@ -2,7 +2,8 @@
   "expo": {
     "name": "map-box",
     "slug": "map-box",
-    "version": "1.0.0",
+    "icon": "./public/logo/roda-logo-light.png",
+    "version": "0.1.0",
     "assetBundlePatterns": [
       "**/*"
     ]
